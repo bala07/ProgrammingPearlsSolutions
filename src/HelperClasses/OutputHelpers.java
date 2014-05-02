@@ -1,5 +1,7 @@
 package HelperClasses;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: "Balasubramanian"
@@ -16,5 +18,16 @@ public class OutputHelpers {
         }
 
         System.out.println();
+    }
+
+    public static void printStringArrayList(ArrayList<String> list)
+    {
+        System.out.println("------------------");
+        for(String word : list)
+        {
+            System.out.println(word + " ");
+        }
+
+        System.out.println("\n------------------");
     }
 }
