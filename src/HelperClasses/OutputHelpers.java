@@ -31,4 +31,26 @@ public class OutputHelpers {
         System.out.println("\n------------------");
     }
 
+    public static void printCharMatrix(char[][] matrix)
+    {
+        for(int i=0; i<matrix.length; ++i)
+        {
+            for(int j=0; j<matrix[0].length; ++j)
+            {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printDashes(int count)
+    {
+        for(int i=0; i<count; ++i)
+        {
+            System.out.print('-');
+        }
+
+        System.out.println();
+    }
+
 }
