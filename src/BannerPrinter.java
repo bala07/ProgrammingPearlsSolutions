@@ -24,7 +24,7 @@ public class BannerPrinter
     public void printBanner(char ch)
     {
         clearBanner();
-        OutputHelpers.printDashes(12);
+        OutputHelpers.printDashes(rows + 10);
 
         switch(ch)
         {
@@ -161,7 +161,7 @@ public class BannerPrinter
 
         OutputHelpers.printCharMatrix(banner);
 
-        OutputHelpers.printDashes(12);
+        OutputHelpers.printDashes(rows + 10);
     }
 
     private void clearBanner()
@@ -220,7 +220,7 @@ public class BannerPrinter
         private void fillBannerForA()
         {
             fillRow(0);
-            fillRow(rows/2);
+            fillRow((rows-1)/2);
 
             fillColumn(0);
             fillColumn(columns - 1);
@@ -229,7 +229,7 @@ public class BannerPrinter
         private void fillBannerForB()
         {
             fillRow(0);
-            fillRow(rows/2, 1, columns-1);
+            fillRow((rows-1)/2, 1, columns-1);
             fillRow(rows-1);
 
             fillColumn(1);
@@ -256,7 +256,7 @@ public class BannerPrinter
         private void fillBannerForE()
         {
             fillRow(0);
-            fillRow(rows/2, 0, columns/2 + 1);
+            fillRow((rows-1)/2, 0, (columns-1)/2 + 1);
             fillRow(rows-1);
 
             fillColumn(0);
@@ -265,7 +265,7 @@ public class BannerPrinter
         private void fillBannerForF()
         {
             fillRow(0);
-            fillRow(rows/2, 0, columns/2 + 1);
+            fillRow((rows-1)/2, 0, (columns-1)/2 + 1);
 
             fillColumn(0);
         }
@@ -274,15 +274,15 @@ public class BannerPrinter
         {
             fillRow(0);
             fillRow(rows-1);
-            fillRow(rows/2, columns/2, columns-1);
+            fillRow((rows-1)/2, (columns-1)/2, columns-1);
 
             fillColumn(0);
-            fillColumn(columns-1, rows/2, rows-1);
+            fillColumn(columns-1, (rows-1)/2, rows-1);
         }
 
         private void fillBannerForH()
         {
-            fillRow(rows/2);
+            fillRow((rows-1)/2);
 
             fillColumn(0);
             fillColumn(columns-1);
@@ -299,19 +299,19 @@ public class BannerPrinter
         private void fillBannerForJ()
         {
             fillRow(0);
-            fillRow(rows-1, 0, columns/2);
+            fillRow(rows-1, 0, (columns-1)/2);
 
-            fillColumn(columns/2);
+            fillColumn((columns-1)/2);
         }
 
         private void fillBannerForK()
         {
-            fillRow(rows/2, 0, 1);
+            fillRow((rows-1)/2, 0, 1);
 
             fillColumn(0);
 
-            fillFullDiagonal(rows / 2, 1, -1, 1);
-            fillFullDiagonal(rows / 2, 1, 1, 1);
+            fillFullDiagonal((rows-1) / 2, 1, -1, 1);
+            fillFullDiagonal((rows-1) / 2, 1, 1, 1);
         }
 
         private void fillBannerForL()
@@ -326,8 +326,8 @@ public class BannerPrinter
             fillColumn(0);
             fillColumn(columns-1);
 
-            fillPartialDiagonal(0, 0, rows/2, columns/2);
-            fillPartialDiagonal(0, columns-1, rows/2, columns/2);
+            fillPartialDiagonal(0, 0, (rows-1)/2, (columns-1)/2);
+            fillPartialDiagonal(0, columns-1, (rows-1)/2, (columns-1)/2);
 
         }
 
@@ -352,10 +352,10 @@ public class BannerPrinter
         private void fillBannerForP()
         {
             fillRow(0);
-            fillRow(rows/2);
+            fillRow((rows-1)/2);
 
             fillColumn(0);
-            fillColumn(columns-1, 0, rows/2);
+            fillColumn(columns-1, 0, (rows-1)/2);
         }
 
         private void fillBannerForQ()
@@ -371,29 +371,29 @@ public class BannerPrinter
         private void fillBannerForR()
         {
             fillRow(0);
-            fillRow(rows/2);
+            fillRow((rows-1)/2);
 
             fillColumn(0);
-            fillColumn(columns-1, 0, rows/2);
+            fillColumn(columns-1, 0, (rows-1)/2);
 
-            fillPartialDiagonal(rows/2, columns/2, rows-1, columns-1);
+            fillPartialDiagonal((rows-1)/2, (columns-1)/2, rows-1, columns-1);
         }
 
         private void fillBannerForS()
         {
             fillRow(0);
-            fillRow(rows/2);
+            fillRow((rows-1)/2);
             fillRow(rows-1);
 
-            fillColumn(0, 0, rows/2);
-            fillColumn(columns-1, rows/2, rows-1);
+            fillColumn(0, 0, (rows-1)/2);
+            fillColumn(columns-1, (rows-1)/2, rows-1);
         }
 
         private void fillBannerForT()
         {
             fillRow(0);
 
-            fillColumn(columns/2);
+            fillColumn((columns-1)/2);
         }
 
         private void fillBannerForU()
@@ -407,11 +407,11 @@ public class BannerPrinter
 
         private void fillBannerForV()
         {
-            fillColumn(0, 0, rows/2);
-            fillColumn(columns-1, 0, rows/2);
+            fillColumn(0, 0, (rows-1)/2);
+            fillColumn(columns-1, 0, (rows-1)/2);
 
-            fillPartialDiagonal(rows/2, 0, rows-1, columns/2);
-            fillPartialDiagonal(rows/2, columns-1, rows-1, columns/2);
+            fillPartialDiagonal((rows-1)/2, 0, rows-1, (columns-1)/2);
+            fillPartialDiagonal((rows-1)/2, columns-1, rows-1, (columns-1)/2);
         }
 
         private void fillBannerForW()
@@ -419,8 +419,8 @@ public class BannerPrinter
             fillColumn(0);
             fillColumn(columns-1);
 
-            fillPartialDiagonal(rows-1, 0, rows/2, columns/2);
-            fillPartialDiagonal(rows-1, columns-1, rows/2, columns/2);
+            fillPartialDiagonal(rows-1, 0, (rows-1)/2, (columns-1)/2);
+            fillPartialDiagonal(rows-1, columns-1, (rows-1)/2, (columns-1)/2);
         }
 
         private void fillBannerForX()
@@ -431,10 +431,10 @@ public class BannerPrinter
 
         private void fillBannerForY()
         {
-            fillColumn(columns/2, rows/2, rows-1);
+            fillColumn((columns-1)/2, (rows-1)/2, rows-1);
 
-            fillPartialDiagonal(0, 0, rows/2, columns/2);
-            fillPartialDiagonal(0, columns-1, rows/2, columns/2);
+            fillPartialDiagonal(0, 0, (rows-1)/2, (columns-1)/2);
+            fillPartialDiagonal(0, columns-1, (rows-1)/2, (columns-1)/2);
         }
 
         private void fillBannerForZ()
@@ -508,6 +508,5 @@ public class BannerPrinter
         }
 
     }
-
 
 }
