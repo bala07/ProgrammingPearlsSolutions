@@ -53,4 +53,14 @@ public class OutputHelpers {
         System.out.println();
     }
 
+    public static void printSequence(char character, int times)
+    {
+        for(int i=0; i<times; ++i)
+        {
+            System.out.print(character);
+        }
+
+        System.out.println();
+    }
+
 }
