@@ -63,4 +63,14 @@ public class OutputHelpers {
         System.out.println();
     }
 
+    public static <T> void printArray(T[] a)
+    {
+        for(int i=0; i<a.length; ++i)
+        {
+            System.out.print(a[i] + " ");
+        }
+
+        System.out.println();
+    }
+
 }
