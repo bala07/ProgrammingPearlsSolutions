@@ -1,5 +1,12 @@
 package HelperClasses;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 /**
  * Created by Balasubramanian on 5/7/14.
  */
@@ -36,5 +43,19 @@ public class GeneralHelpers {
         }
 
         return a;
+    }
+
+    public static String getRandomDateString(String dateFormat) {
+        DateTime dateTime;
+        long currentTimeMillis = System.currentTimeMillis();
+        long offset = (long)(Math.random() * currentTimeMillis);
+        if((int)(Math.random() * 2) == 0) {
+            dateTime = new DateTime(currentTimeMillis - offset);
+        }
+        else {
+            dateTime = new DateTime(currentTimeMillis + offset);
+        }
+
+        return DateTimeFormat.forPattern(dateFormat).print(dateTime);
     }
 }
