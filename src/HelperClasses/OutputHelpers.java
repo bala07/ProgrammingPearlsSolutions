@@ -63,7 +63,7 @@ public class OutputHelpers {
         System.out.println();
     }
 
-    public static <T> void printArray(T[] a)
+    public static void printIntegerArray(int[] a)
     {
         for(int i=0; i<a.length; ++i)
         {
@@ -71,6 +71,20 @@ public class OutputHelpers {
         }
 
         System.out.println();
+    }
+
+    public static boolean compareIntegerArrays(int[] a, int[] b) {
+        if(a.length != b.length) {
+            return false;
+        }
+
+        for(int idx = 0; idx < a.length; ++idx) {
+            if(a[idx] != b[idx]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }
