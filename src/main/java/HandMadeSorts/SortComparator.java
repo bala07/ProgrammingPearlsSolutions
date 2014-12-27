@@ -3,15 +3,8 @@ package HandMadeSorts;
 import HelperClasses.GeneralHelpers;
 
 public class SortComparator {
-    private static final int MAX_NUM = (int) 1e8;
+    private final int MAX_NUM = (int) 1e8;
     private final int MAX_LEN = (int) 1e6;
-    private RandomizedQuickSort randomizedQuickSort;
-    private IterativeQuickSort iterativeQuickSortEnd;
-
-    public SortComparator() {
-        randomizedQuickSort = new RandomizedQuickSort();
-        iterativeQuickSortEnd = new IterativeQuickSort();
-    }
 
     public void compare() {
         int[] randomArray = GeneralHelpers.generateArray((int) (Math.random() * MAX_LEN), MAX_NUM);
