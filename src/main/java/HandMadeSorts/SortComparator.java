@@ -10,13 +10,15 @@ public class SortComparator {
         int[] randomArray = GeneralHelpers.generateArray((int) (Math.random() * MAX_LEN), MAX_NUM);
         int[] a1 = randomArray.clone();
         int[] a2 = randomArray.clone();
+        IterativeQuickSort iterativeQuickSort = new IterativeQuickSort();
+        RandomizedQuickSort randomizedQuickSort = new RandomizedQuickSort();
 
         long randomizedQuickSortStart = System.currentTimeMillis();
-        new RandomizedQuickSort().sort(a1);
+        randomizedQuickSort.sort(a1);
         long randomizedQuickSortEnd = System.currentTimeMillis();
 
         long iterativeQuickSortStart = System.currentTimeMillis();
-        new IterativeQuickSort().sort(a2);
+        iterativeQuickSort.sort(a2);
         long iterativeQuickSortEnd = System.currentTimeMillis();
 
         long timeForIterativeQuickSort = (iterativeQuickSortEnd - iterativeQuickSortStart);
